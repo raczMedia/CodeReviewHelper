@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Code Review Helper (Github)",
+    "icons": {
+        "128": "codeReview.png"
+    },
+    "version": "0.2",
+    "description": "Allows you to create bookmarks and save closed diff states to local storage for PRs. More features to come",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://github.com/*"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "commands": {
+        "toggle-diff-bookmark": {
+            "suggested_key": {
+                "mac": "Alt+W"
+            },
+            "description": "Toggle the bookmark for a diff"
+        },
+        "toggle-diff-state": {
+            "suggested_key": {
+                "mac": "Alt+Q"
+            },
+            "description": "Toggle the closed/open state for a diff"
+        }
+    }
+}
